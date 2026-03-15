@@ -1,22 +1,34 @@
 import { NextResponse } from 'next/server';
+import { supabase } from '@/utils/supabaseAdmin';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
 
-    // Here you would normally:
-    // 1. Validate 'body' data
-    // 2. Save to Database (e.g. Supabase or MongoDB)
-    // 3. Send email using SendGrid or Nodemailer
+    // Guardar el mensaje en Supabase
+    const { data, error } = await supabase.from('contact_messages').insert([
+      {
+        name: body.name,
+        email: body.email,
+        phone: body.phone,
+        type: body.type,
+        budget: body.budget,
+        message: body.message,
+        created_at: new Date().toISOString(),
+      },
+    ]);
 
-    console.log('Received Form Data:', body);
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json({ success: false, message: 'Error al guardar en la base de datos.' }, { status: 500 });
+    }
 
-    return NextResponse.json({ success: true, message: 'Message sent successfully.' }, { status: 200 });
+    // Simulación de envío de correo
+    console.log('Enviar correo a juliosalas01@icloud.com con:', body);
+
+    return NextResponse.json({ success: true, message: 'Mensaje enviado correctamente.' }, { status: 200 });
   } catch (error) {
-    console.error('Error in contact route:', error);
-    return NextResponse.json({ success: false, message: 'Error processing request.' }, { status: 500 });
+    console.error('Error en contact route:', error);
+    return NextResponse.json({ success: false, message: 'Error procesando la solicitud.' }, { status: 500 });
   }
 }

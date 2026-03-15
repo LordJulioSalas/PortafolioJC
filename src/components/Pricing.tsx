@@ -9,32 +9,32 @@ export default function Pricing() {
   const packages = [
     {
       name: langConfig.pricing.plans.web.name,
-      price: "$2k - $3.5k",
-      time: "2-3 días",
+      price: "$900 USD / $3.600.000 COP",
+      time: "3-5 días",
       description: langConfig.pricing.plans.web.desc,
       features: langConfig.pricing.plans.web.features,
-      examples: "Ej: PetCare, Tienda, Agendamiento",
+      examples: "Ej: Página personal, negocio local, portafolio",
       highlighted: false,
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.security.name,
-      price: "$4k - $6.5k",
-      time: "2-3 semanas",
+      price: "$1.900 USD / $7.600.000 COP",
+      time: "1-2 semanas",
       description: langConfig.pricing.plans.security.desc,
       features: langConfig.pricing.plans.security.features,
-      examples: "Ej: SaaS inicial, Plataforma Múltiple",
+      examples: "Ej: Reservas, blog, panel de administración",
       highlighted: true,
-      badge: "Top",
+      badge: "Recomendado",
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.data.name,
-      price: "$7k+",
-      time: "3-4 semanas",
+      price: "$3.900 USD / $15.600.000 COP",
+      time: "2-4 semanas",
       description: langConfig.pricing.plans.data.desc,
       features: langConfig.pricing.plans.data.features,
-      examples: "Ej: ERP, Marketplace, Sistemas Core",
+      examples: "Ej: Sistema especial, integración avanzada",
       highlighted: false,
       cta: langConfig.pricing.btnText
     }

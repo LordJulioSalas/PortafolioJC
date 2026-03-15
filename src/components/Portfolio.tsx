@@ -15,17 +15,17 @@ export default function Portfolio() {
       highlighted: true,
     },
     {
-      title: langConfig.portfolio.items[1].title,
-      description: langConfig.portfolio.items[1].desc,
-      link: "#",
-      tags: ["Next.js", "Stripe", "Supabase", "Tailwind"],
+      title: "¿Tu proyecto aquí?",
+      description: "¿Quieres ver tu idea hecha realidad y publicada aquí? Contáctame y tu proyecto puede ser el próximo caso de éxito.",
+      link: "#contact",
+      tags: ["A tu medida", "Soporte", "Asesoría"],
       highlighted: false,
     },
     {
-      title: langConfig.portfolio.items[2].title,
-      description: langConfig.portfolio.items[2].desc,
-      link: "#",
-      tags: ["React", "Express", "PostgreSQL", "Nodemailer"],
+      title: "Próximamente",
+      description: "Estamos trabajando en nuevos desarrollos para mostrar más casos reales. ¡Muy pronto más ejemplos aquí!",
+      link: "#portfolio",
+      tags: ["En desarrollo"],
       highlighted: false,
     }
   ];

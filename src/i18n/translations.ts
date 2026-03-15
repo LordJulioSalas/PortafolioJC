@@ -65,22 +65,22 @@ export const translations = {
     pricing: {
       title: "Paquetes &",
       titleHighlight: "Precios",
-      subtitle: "Soluciones escalables adaptadas a tus necesidades, sin costos ocultos.",
+      subtitle: "Elige el plan que más se ajuste a tu negocio. Precios pensados para que todos puedan tener su página web.",
       plans: {
         web: {
-          name: "Plantilla Rápida",
-          desc: "Perfecto para negocios que necesitan presencia online inmediata.",
-          features: ["Landing page", "Portal login", "Base de datos", "Emails automáticos", "Deploy incluido"]
+          name: "Sitio Básico",
+          desc: "Ideal para quienes quieren tener presencia en internet de forma rápida y sencilla.",
+          features: ["Página principal (Landing page)", "Sección de contacto", "Apariencia profesional", "Correos automáticos básicos", "Publicación incluida"]
         },
         security: {
-          name: "Personalización Avanzada",
-          desc: "Solución completa con integraciones y panel administrativo.",
-          features: ["Todo lo del plan básico", "Integración APIs externas", "Dashboards interactivos", "Optimización SEO", "1 mes de soporte"]
+          name: "Sitio con Panel",
+          desc: "Para quienes necesitan administrar su contenido y recibir mensajes o reservas.",
+          features: ["Todo lo del plan básico", "Panel de administración simple", "Formularios personalizados", "Optimización para buscadores (SEO)", "1 mes de soporte"]
         },
         data: {
-          name: "Custom Completo",
-          desc: "Desarrollo a la medida para requerimientos empresariales.",
-          features: ["Consultoría técnica", "Desarrollo 100% personalizado", "Integraciones complejas", "Arquitectura escalable", "3 meses de soporte"]
+          name: "Solución a Medida",
+          desc: "Si tienes una idea especial o un negocio que necesita algo único, este plan es para ti.",
+          features: ["Asesoría personalizada", "Desarrollo a tu medida", "Integraciones especiales", "Escalabilidad", "3 meses de soporte"]
         }
       },
       btnText: "Elegir Plan"
