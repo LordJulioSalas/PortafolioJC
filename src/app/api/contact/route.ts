@@ -6,7 +6,8 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // Guardar el mensaje en Supabase
-    const { data, error } = await supabase.from('contact_messages').insert([
+
+    const { error } = await supabase.from('contact_messages').insert([
       {
         name: body.name,
         email: body.email,
