@@ -1,10 +1,8 @@
 "use client";
 
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
-import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Footer() {
-  const { langConfig } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -68,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} {langConfig.footer.text}</p>
+          <p>&copy; {currentYear} LORD.CODE - Julio Salas. Ingeniero de Sistemas.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
             <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>

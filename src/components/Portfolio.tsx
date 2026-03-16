@@ -11,21 +11,21 @@ export default function Portfolio() {
       title: langConfig.portfolio.items[0].title,
       description: langConfig.portfolio.items[0].desc,
       link: "https://petcare-system.vercel.app/",
-      tags: ["Node.js", "MongoDB", "React", "Next.js"],
+      tags: langConfig.portfolio.items[0].tags,
       highlighted: true,
     },
     {
-      title: "¿Tu proyecto aquí?",
-      description: "¿Quieres ver tu idea hecha realidad y publicada aquí? Contáctame y tu proyecto puede ser el próximo caso de éxito.",
+      title: langConfig.portfolio.items[1].title,
+      description: langConfig.portfolio.items[1].desc,
       link: "#contact",
-      tags: ["A tu medida", "Soporte", "Asesoría"],
+      tags: langConfig.portfolio.items[1].tags,
       highlighted: false,
     },
     {
-      title: "Próximamente",
-      description: "Estamos trabajando en nuevos desarrollos para mostrar más casos reales. ¡Muy pronto más ejemplos aquí!",
+      title: langConfig.portfolio.items[2].title,
+      description: langConfig.portfolio.items[2].desc,
       link: "#portfolio",
-      tags: ["En desarrollo"],
+      tags: langConfig.portfolio.items[2].tags,
       highlighted: false,
     }
   ];
