@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -13,7 +13,8 @@ const formSchema = z.object({
   phone: z.string().optional(),
   type: z.string().min(1, 'Selecciona un tipo de web').refine(val => val !== '', { message: 'Selecciona un tipo de web' }),
   budget: z.string().min(1, 'Selecciona un presupuesto aproximado').refine(val => val !== '', { message: 'Selecciona un presupuesto aproximado' }),
-  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres')
+  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
+  website: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -24,6 +25,15 @@ export default function ContactForm() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
+  useEffect(() => {
+    if (submitSuccess) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess]);
+
   const {
     register,
     handleSubmit,
@@ -33,8 +43,9 @@ export default function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       type: '',
-      budget: ''
-    }
+      budget: '',
+      website: '',
+    },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -68,7 +79,9 @@ export default function ContactForm() {
       
       <div className="container mx-auto px-4 md:px-6 max-w-3xl relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{langConfig.contact.title} <span className="text-primary">{langConfig.contact.titleHighlight}</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {langConfig.contact.title} <span className="text-primary">{langConfig.contact.titleHighlight}</span>
+          </h2>
           <p className="text-muted-foreground text-lg">
             {langConfig.contact.subtitle}
           </p>
@@ -93,12 +106,28 @@ export default function ContactForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <input
+                {...register('website')}
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  width: '1px',
+                  height: '1px',
+                  opacity: 0,
+                }}
+                aria-hidden="true"
+              />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground/80">{langConfig.contact.form.name}</label>
                   <input 
                     {...register('name')} 
-                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-gray-400"
+                    className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
                     placeholder="Tu nombre"
                   />
                   {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
@@ -109,7 +138,7 @@ export default function ContactForm() {
                   <input 
                     {...register('email')} 
                     type="email"
-                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-gray-400"
+                    className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
                     placeholder="tu@email.com"
                   />
                   {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
@@ -121,7 +150,7 @@ export default function ContactForm() {
                   <label className="text-sm font-medium text-foreground/80">Teléfono (Opcional)</label>
                   <input 
                     {...register('phone')} 
-                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-gray-400"
+                    className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
                     placeholder="+57 300 000 0000"
                   />
                 </div>
@@ -130,13 +159,16 @@ export default function ContactForm() {
                   <label className="text-sm font-medium text-foreground/80">Tipo de Proyecto *</label>
                   <select 
                     {...register('type')} 
-                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
+                    className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
                   >
                     <option value="" disabled>Selecciona una opción</option>
-                    <option value="Veterinaria">Veterinaria</option>
-                    <option value="E-commerce">E-commerce</option>
-                    <option value="Agendamiento">Agendamiento / Reservas</option>
-                    <option value="Otro">Otro</option>
+                    <option value="Desarrollo de Sitio Web">Desarrollo de Sitio Web</option>
+                    <option value="E-commerce / Tienda Online">E-commerce / Tienda Online</option>
+                    <option value="Aplicación Web">Aplicación Web</option>
+                    <option value="Consultoría Técnica">Consultoría Técnica</option>
+                    <option value="Oportunidad Laboral">Oportunidad Laboral</option>
+                    <option value="Colaboración / Partnership">Colaboración / Partnership</option>
+                    <option value="Otro Asunto">Otro Asunto</option>
                   </select>
                   {errors.type && <p className="text-red-400 text-xs">{errors.type.message}</p>}
                 </div>
@@ -146,7 +178,7 @@ export default function ContactForm() {
                 <label className="text-sm font-medium text-foreground/80">Presupuesto Aproximado *</label>
                 <select 
                   {...register('budget')} 
-                  className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
+                  className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
                 >
                   <option value="" disabled>Selecciona una opción</option>
                   <option value="$2-3k">$2,000 - $3,500 (Básico)</option>
@@ -162,7 +194,7 @@ export default function ContactForm() {
                 <textarea 
                   {...register('message')} 
                   rows={4}
-                  className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all resize-none placeholder:text-gray-400"
+                  className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all resize-none placeholder:text-muted-foreground"
                   placeholder="Cuéntame sobre tu idea o requerimientos..."
                 ></textarea>
                 {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}

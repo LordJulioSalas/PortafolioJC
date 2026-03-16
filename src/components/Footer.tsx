@@ -41,7 +41,7 @@ export default function Footer() {
             <h4 className="font-bold mb-6 text-white/90">Contacto</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-primary" /> thejuliosalas@gmail.com</li>
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> +57 312 234 5678</li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> +57 321 774 9666</li>
               <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> Rionegro, Antioquia, CO</li>
             </ul>
           </div>

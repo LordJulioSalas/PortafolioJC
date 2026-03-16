@@ -124,4 +124,28 @@
       inset 0 0 10px rgba(16, 185, 129, 0.2);
     border-color: rgba(16, 185, 129, 0.5);
   }
+
+  /* ========================
+     FIX PARA INPUTS EN DARK MODE
+     ======================== */
+
+  /* Aplicar color-scheme a todos los inputs */
+  input,
+  textarea,
+  select {
+    color-scheme: light dark;
+  }
+
+  /* En modo oscuro, usar color-scheme dark para que el navegador ajuste automáticamente */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color-scheme: dark;
+  }
+
+  /* Asegurar que los options tengan los colores correctos */
+  .dark select option {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+  }
 }

@@ -92,9 +92,21 @@ export const translations = {
       btnDemo: "Ver Proyecto en Vivo",
       btnCode: "Código",
       items: [
-        { title: "PetCare System", desc: "Sistema de agendamiento de citas veterinarias con portal administrativo en tiempo real." },
-        { title: "E-Commerce Pro", desc: "Tienda en línea de alto rendimiento con carrito, pasarela de pagos e inventario." },
-        { title: "Agendamiento Dental", desc: "Plataforma de reservas para clínicas con recordatorios por correo electrónico automáticos." }
+        { 
+          title: "PetCare System", 
+          desc: "Sistema de agendamiento de citas veterinarias con portal administrativo en tiempo real.",
+          tags: ["Node.js", "MongoDB", "React", "Next.js"]
+        },
+        { 
+          title: "¿Tu proyecto aquí?", 
+          desc: "¿Quieres ver tu idea hecha realidad y publicada aquí? Contáctame y tu proyecto puede ser el próximo caso de éxito.",
+          tags: ["A tu medida", "Soporte", "Asesoría"]
+        },
+        { 
+          title: "Próximamente", 
+          desc: "Estamos trabajando en nuevos desarrollos para mostrar más casos reales. ¡Muy pronto más ejemplos aquí!",
+          tags: ["En desarrollo"]
+        }
       ]
     },
     testimonials: {
@@ -233,9 +245,21 @@ export const translations = {
       btnDemo: "Live Project",
       btnCode: "Source Code",
       items: [
-        { title: "PetCare System", desc: "Veterinary appointment scheduling system with a real-time administrative portal." },
-        { title: "E-Commerce Pro", desc: "High-performance online store with shopping cart, payment gateway, and inventory." },
-        { title: "Dental Booking", desc: "Reservation platform for clinics with automated email reminders." }
+        { 
+          title: "PetCare System", 
+          desc: "Veterinary appointment scheduling system with a real-time administrative portal.",
+          tags: ["Node.js", "MongoDB", "React", "Next.js"]
+        },
+        { 
+          title: "Your project here?", 
+          desc: "Want to see your idea come to life and published here? Contact me and your project could be the next success story.",
+          tags: ["Custom-made", "Support", "Consulting"]
+        },
+        { 
+          title: "Coming Soon", 
+          desc: "We're working on new developments to showcase more real cases. More examples coming soon!",
+          tags: ["In development"]
+        }
       ]
     },
     testimonials: {
