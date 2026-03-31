@@ -16,6 +16,8 @@ const formSchema = z.object({
   website: z.string().optional(),
 });
 
+type ContactFormData = z.infer<typeof formSchema>;
+
 export default function ContactForm() {
   const { langConfig } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +38,7 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm<FormData>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       type: '',
@@ -44,7 +46,7 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitSuccess(false);
     setSubmitError(false);
