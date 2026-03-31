@@ -19,9 +19,6 @@ export default function About() {
             <div className="space-y-4 text-muted-foreground text-lg">
               <p>{langConfig.about.p1}</p>
               <p>{langConfig.about.p2}</p>
-              <p className="text-primary font-semibold">
-                {langConfig.about.p3}
-              </p>
             </div>
           </div>
 

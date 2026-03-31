@@ -23,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
+    <nav translate="no" className={`notranslate fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex flex-col items-start translate-y-1">
           <a href="#" className="text-2xl font-bold neon-text tracking-tighter leading-none">

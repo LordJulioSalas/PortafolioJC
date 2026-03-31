@@ -180,7 +180,12 @@ export const translations = {
       }
     },
     footer: {
-      text: "Portfolio Julio Salas. Ingeniero de Sistemas."
+      navigation: "Navegación",
+      contact: "Contacto",
+      social: "Redes Sociales",
+      rights: "Ingeniero de Sistemas.",
+      terms: "Términos de Servicio",
+      privacy: "Política de Privacidad"
     }
   },
   en: {
@@ -364,7 +369,12 @@ export const translations = {
       }
     },
     footer: {
-      text: "Julio Salas Portfolio. Systems Engineer."
+      navigation: "Navigation",
+      contact: "Contact",
+      social: "Social Media",
+      rights: "Systems Engineer.",
+      terms: "Terms of Service",
+      privacy: "Privacy Policy"
     }
   }
 };

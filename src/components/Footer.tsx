@@ -1,8 +1,10 @@
 "use client";
 
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -12,11 +14,11 @@ export default function Footer() {
           
           <div className="md:col-span-1">
             <div className="inline-block mb-6">
-              <span className="text-2xl font-bold neon-text tracking-tighter">
+              <span translate="no" className="notranslate text-2xl font-bold neon-text tracking-tighter">
                 LORD<span className="text-primary">.</span>CODE
               </span>
               <div className="w-full h-[1px] bg-gradient-to-r from-primary to-transparent mt-[2px] mb-[1px]"></div>
-              <span className="text-[0.7rem] font-medium tracking-[0.25em] text-muted-foreground uppercase pl-1 leading-none pt-1">
+              <span translate="no" className="notranslate text-[0.7rem] font-medium tracking-[0.25em] text-muted-foreground uppercase pl-1 leading-none pt-1">
                 developer
               </span>
             </div>
@@ -26,17 +28,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-white/90">Navegación</h4>
+            <h4 className="font-bold mb-6 text-white/90">{t('footer.navigation')}</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors">Sobre Mí</a></li>
-              <li><a href="#how-it-works" className="hover:text-primary transition-colors">Cómo Funciona</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Paquetes</a></li>
-              <li><a href="#portfolio" className="hover:text-primary transition-colors">Portafolio</a></li>
+              <li><a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
+              <li><a href="#how-it-works" className="hover:text-primary transition-colors">{t('nav.howItWorks')}</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">{t('nav.pricing')}</a></li>
+              <li><a href="#portfolio" className="hover:text-primary transition-colors">{t('nav.portfolio')}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-white/90">Contacto</h4>
+            <h4 className="font-bold mb-6 text-white/90">{t('footer.contact')}</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-primary" /> thejuliosalas@gmail.com</li>
               <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> +57 321 774 9666</li>
@@ -45,7 +47,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-white/90">Redes Sociales</h4>
+            <h4 className="font-bold mb-6 text-white/90">{t('footer.social')}</h4>
             <div className="flex gap-4">
               <a href="https://github.com/LordJulioSalas" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary/20 hover:text-primary transition-all border border-white/10 hover:border-primary/50">
                 <Github className="w-5 h-5" />
@@ -66,10 +68,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} LORD.CODE - Julio Salas. Ingeniero de Sistemas.</p>
+          <p>&copy; {currentYear} LORD.CODE - Julio Salas. {t('footer.rights')}</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
           </div>
         </div>
       </div>
