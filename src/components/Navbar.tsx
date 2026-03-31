@@ -40,7 +40,6 @@ export default function Navbar() {
           <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">{langConfig.nav.about}</a>
           <a href="#experience" className="text-sm font-medium hover:text-primary transition-colors">{langConfig.nav.experience}</a>
           <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">{langConfig.nav.howItWorks}</a>
-          <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">{langConfig.nav.pricing}</a>
           <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">{langConfig.nav.portfolio}</a>
           
           <div className="flex items-center space-x-2 border-l border-border pl-6">
@@ -80,7 +79,6 @@ export default function Navbar() {
           <a href="#about" onClick={() => setIsOpen(false)} className="text-lg font-medium">{langConfig.nav.about}</a>
           <a href="#experience" onClick={() => setIsOpen(false)} className="text-lg font-medium">{langConfig.nav.experience}</a>
           <a href="#how-it-works" onClick={() => setIsOpen(false)} className="text-lg font-medium">{langConfig.nav.howItWorks}</a>
-          <a href="#pricing" onClick={() => setIsOpen(false)} className="text-lg font-medium">{langConfig.nav.pricing}</a>
           <a href="#portfolio" onClick={() => setIsOpen(false)} className="text-lg font-medium">{langConfig.nav.portfolio}</a>
           
           <div className="flex items-center space-x-4 pt-4 border-t border-border w-2/3 justify-center">

@@ -4,7 +4,7 @@ export const translations = {
       about: "Sobre Mí",
       experience: "Experiencia",
       howItWorks: "Cómo Funciona",
-      pricing: "Paquetes",
+      pricing: "Servicios",
       portfolio: "Portafolio",
       contact: "Contactar"
     },
@@ -19,7 +19,7 @@ export const translations = {
     about: {
       title: "Sobre",
       titleHighlight: "Mí",
-      p1: "Soy Julio Salas, Ingeniero de Sistemas (próximo a titularme en marzo de 2026 en la UCO) con experiencia sólida en entornos corporativos internacionales.",
+      p1: "Soy Julio Salas, Ingeniero de Sistemas graduado en 2026 por la UCO, con experiencia sólida en entornos corporativos internacionales.",
       p2: "Me destaco como Asistente de Área IT en S&S Construction Engineering, brindando soporte técnico, garantizando la continuidad operativa y participando en el desarrollo de software, ciberseguridad y análisis de datos."
     },
     experience: {
@@ -39,11 +39,11 @@ export const translations = {
         ]
       },
       exp2: {
-        title: "Ingeniero de Sistemas (Candidato)",
+        title: "Ingeniero de Sistemas",
         company: "Universidad Católica de Oriente (UCO)",
         location: "Antioquia, Colombia",
-        period: "Grado previsto: Marzo 2026",
-        description: "Formación académica finalizada con enfoque en desarrollo de software, ciberseguridad y análisis de datos.",
+        period: "Graduado Marzo 2026",
+        description: "Formación académica completada con enfoque en desarrollo de software, ciberseguridad y análisis de datos.",
         points: [
           "Desarrollo de Software y Arquitectura de Sistemas.",
           "Fundamentos y prácticas de Ciberseguridad.",
@@ -63,27 +63,27 @@ export const translations = {
       ]
     },
     pricing: {
-      title: "Paquetes &",
-      titleHighlight: "Precios",
-      subtitle: "Elige el plan que más se ajuste a tu negocio. Precios pensados para que todos puedan tener su página web.",
+      title: "Servicios &",
+      titleHighlight: "Consultoría",
+      subtitle: "Soluciones personalizadas para empresas y proyectos técnicos. Precios a convenir según alcance.",
       plans: {
         web: {
-          name: "Sitio Básico",
-          desc: "Ideal para quienes quieren tener presencia en internet de forma rápida y sencilla.",
-          features: ["Página principal (Landing page)", "Sección de contacto", "Apariencia profesional", "Correos automáticos básicos", "Publicación incluida"]
+          name: "Presencia Corporativa",
+          desc: "Desarrollo de sitio web corporativo orientado a visibilidad y reputación.",
+          features: ["Diseño profesional", "Ancla a tu identidad de marca", "Sección de contacto", "Optimización SEO básica", "Soporte inicial" ]
         },
         security: {
-          name: "Sitio con Panel",
-          desc: "Para quienes necesitan administrar su contenido y recibir mensajes o reservas.",
-          features: ["Todo lo del plan básico", "Panel de administración simple", "Formularios personalizados", "Optimización para buscadores (SEO)", "1 mes de soporte"]
+          name: "Sistemas Internos",
+          desc: "Implementación de paneles administrativos y flujos de datos seguros para equipos corporativos.",
+          features: ["Dashboards interactivos", "Integraciones API", "Control de roles y accesos", "Soporte dedicado", "Alta disponibilidad"]
         },
         data: {
-          name: "Solución a Medida",
-          desc: "Si tienes una idea especial o un negocio que necesita algo único, este plan es para ti.",
-          features: ["Asesoría personalizada", "Desarrollo a tu medida", "Integraciones especiales", "Escalabilidad", "3 meses de soporte"]
+          name: "Arquitectura de Datos",
+          desc: "Análisis y pipelines de datos para inteligencia empresarial y decisiones basadas en insights.",
+          features: ["Modelamiento de datos", "ETL/ELT", "Visualización avanzada", "Escalabilidad", "Monitoreo continuo"]
         }
       },
-      btnText: "Elegir Plan"
+      btnText: "Contactar" 
     },
     portfolio: {
       title: "Caso de",
@@ -130,7 +130,7 @@ export const translations = {
       titleHighlight: "Frecuentes",
       subtitle: "Respuestas directas sobre mi disponibilidad y forma de trabajo.",
       questions: [
-        { q: "¿En qué etapa de tus estudios te encuentras?", a: "Estoy próximo a graduarme de la carrera de Ingeniería de Sistemas en la Universidad Católica de Oriente (UCO), con fecha estimada para Marzo de 2026. Ya he completado todo mi ciclo formativo." },
+        { q: "¿En qué etapa de tus estudios te encuentras?", a: "Me gradué de Ingeniería de Sistemas en la Universidad Católica de Oriente (UCO) en marzo de 2026. Ya he completado todo mi ciclo formativo." },
         { q: "¿Tienes experiencia real en empresas?", a: "Sí, actualmente soy Asistente de Área IT en S&S Construction Engineering y S&S Distribution, brindando soporte y garantizando la operatividad tecnológica a nivel internacional." },
         { q: "¿Cuáles son tus áreas fuertes?", a: "Me destaco en Desarrollo de Software (Full-stack), implementación de prácticas de Ciberseguridad, Soporte Técnico Corporativo y Análisis de Datos." },
         { q: "¿Estás disponible para reubicación o remoto?", a: "Estoy abierto a discutir formatos de trabajo remoto, híbrido o presencial, dependiendo del alcance y ubicación del proyecto/empresa." }
@@ -192,10 +192,10 @@ export const translations = {
         ]
       },
       exp2: {
-        title: "Systems Engineer (Candidate)",
+        title: "Systems Engineer",
         company: "Universidad Católica de Oriente (UCO)",
         location: "Antioquia, Colombia",
-        period: "Expected graduation: March 2026",
+        period: "Graduated March 2026",
         description: "Completed academic training with a focus on software development, cybersecurity, and data analysis.",
         points: [
           "Software Development and Systems Architecture.",
@@ -216,27 +216,27 @@ export const translations = {
       ]
     },
     pricing: {
-      title: "Packages &",
-      titleHighlight: "Pricing",
-      subtitle: "Scalable solutions tailored to your needs, with no hidden costs.",
+      title: "Services &",
+      titleHighlight: "Consulting",
+      subtitle: "Personalized enterprise solutions. Costs are tailored to project scope.",
       plans: {
         web: {
-          name: "Quick Template",
-          desc: "Perfect for businesses that need immediate online presence.",
-          features: ["Landing page", "Login portal", "Database", "Automated emails", "Deployment included"]
+          name: "Corporate Presence",
+          desc: "Corporate web presence with professional branding and communication.",
+          features: ["Professional design", "Brand identity integration", "Contact section", "Basic SEO", "Initial support"]
         },
         security: {
-          name: "Advanced Customization",
-          desc: "Complete solution with integrations and an administrative panel.",
-          features: ["Everything in Basic", "External API integrations", "Interactive dashboards", "SEO Optimization", "1 month of support"]
+          name: "Internal Systems",
+          desc: "Setup of secure admin panels and internal systems for corporate teams.",
+          features: ["Interactive dashboards", "API integrations", "Role-based access", "Dedicated support", "High availability"]
         },
         data: {
-          name: "Full Custom",
-          desc: "Tailor-made development for enterprise requirements.",
-          features: ["Technical consulting", "100% custom development", "Complex integrations", "Scalable architecture", "3 months of support"]
+          name: "Data Architecture",
+          desc: "Data pipelines and analytics for business intelligence and informed decision-making.",
+          features: ["Data modeling", "ETL/ELT", "Advanced visualizations", "Scalability", "Continuous monitoring"]
         }
       },
-      btnText: "Choose Plan"
+      btnText: "Contact" 
     },
     portfolio: {
       title: "Success Stories",
@@ -283,7 +283,7 @@ export const translations = {
       titleHighlight: "Questions",
       subtitle: "Direct answers about my availability and workflow.",
       questions: [
-        { q: "What is your current academic status?", a: "I am about to graduate with a Systems Engineering degree from Universidad Católica de Oriente (UCO), estimated for March 2026. I have completed all coursework." },
+        { q: "What is your current academic status?", a: "I graduated with a Systems Engineering degree from Universidad Católica de Oriente (UCO) in March 2026. I have completed all coursework." },
         { q: "Do you have real corporate experience?", a: "Yes, I am currently the IT Area Assistant at S&S Construction Engineering and S&S Distribution, providing support and ensuring technological continuity at an international level." },
         { q: "What are your main areas of strength?", a: "I excel in Software Development (Full-stack), Cybersecurity principles, Corporate Tech Support, and Data Analysis." },
         { q: "Are you available for remote work or relocation?", a: "I am open to discussing remote, hybrid, or on-site arrangements, depending on the scope and location of the project or company." }

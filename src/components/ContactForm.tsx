@@ -12,12 +12,9 @@ const formSchema = z.object({
   email: z.string().email('Email inválido'),
   phone: z.string().optional(),
   type: z.string().min(1, 'Selecciona un tipo de web').refine(val => val !== '', { message: 'Selecciona un tipo de web' }),
-  budget: z.string().min(1, 'Selecciona un presupuesto aproximado').refine(val => val !== '', { message: 'Selecciona un presupuesto aproximado' }),
   message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
   website: z.string().optional(),
 });
-
-type FormData = z.infer<typeof formSchema>;
 
 export default function ContactForm() {
   const { langConfig } = useLanguage();
@@ -43,7 +40,6 @@ export default function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       type: '',
-      budget: '',
       website: '',
     },
   });
@@ -174,20 +170,7 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/80">Presupuesto Aproximado *</label>
-                <select 
-                  {...register('budget')} 
-                  className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
-                >
-                  <option value="" disabled>Selecciona una opción</option>
-                  <option value="$2-3k">$2,000 - $3,500 (Básico)</option>
-                  <option value="$4-6k">$4,000 - $6,500 (Profesional)</option>
-                  <option value="$7k+">$7,000+ (Custom)</option>
-                  <option value="No sé">No estoy seguro aún</option>
-                </select>
-                {errors.budget && <p className="text-red-400 text-xs">{errors.budget.message}</p>}
-              </div>
+
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground/80">{langConfig.contact.form.message}</label>

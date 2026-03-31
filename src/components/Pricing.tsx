@@ -6,35 +6,35 @@ import { useLanguage } from '@/i18n/LanguageContext';
 export default function Pricing() {
   const { language, langConfig } = useLanguage();
   
-  const packages = [
+  const services = [
     {
       name: langConfig.pricing.plans.web.name,
-      price: "$900 USD / $3.600.000 COP",
-      time: "3-5 días",
+      price: "A convenir",
+      time: "Acorde al alcance",
       description: langConfig.pricing.plans.web.desc,
       features: langConfig.pricing.plans.web.features,
-      examples: "Ej: Página personal, negocio local, portafolio",
+      examples: "Ej: Presencia web corporativa, portafolio profesional",
       highlighted: false,
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.security.name,
-      price: "$1.900 USD / $7.600.000 COP",
-      time: "1-2 semanas",
+      price: "A convenir",
+      time: "Acorde al alcance",
       description: langConfig.pricing.plans.security.desc,
       features: langConfig.pricing.plans.security.features,
-      examples: "Ej: Reservas, blog, panel de administración",
+      examples: "Ej: sistemas internos, dashboards, integraciones seguras",
       highlighted: true,
       badge: "Recomendado",
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.data.name,
-      price: "$3.900 USD / $15.600.000 COP",
-      time: "2-4 semanas",
+      price: "A convenir",
+      time: "Acorde al alcance",
       description: langConfig.pricing.plans.data.desc,
       features: langConfig.pricing.plans.data.features,
-      examples: "Ej: Sistema especial, integración avanzada",
+      examples: "Ej: BI, análisis de datos, integraciones empresariales",
       highlighted: false,
       cta: langConfig.pricing.btnText
     }
@@ -51,7 +51,7 @@ export default function Pricing() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-          {packages.map((pkg, idx) => (
+          {services.map((pkg, idx) => (
             <div 
               key={idx} 
               className={`relative rounded-3xl p-8 ${pkg.highlighted ? 'glass neon-border transform md:-translate-y-4' : 'bg-white/5 border border-white/10 hover:border-white/20 transition-colors'}`}

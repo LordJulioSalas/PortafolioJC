@@ -13,20 +13,23 @@ export default function Portfolio() {
       link: "https://petcare-system.vercel.app/",
       tags: langConfig.portfolio.items[0].tags,
       highlighted: true,
+      cta: langConfig.portfolio.btnDemo,
     },
     {
-      title: langConfig.portfolio.items[1].title,
-      description: langConfig.portfolio.items[1].desc,
-      link: "#contact",
-      tags: langConfig.portfolio.items[1].tags,
+      title: "Transformación Digital Corporativa",
+      description: "Diseño de roadmap tecnológico y entrega de soluciones empresariales para mejorar productividad y seguridad.",
+      link: "#about",
+      tags: ["Consultoría", "Automatización", "Seguridad"],
       highlighted: false,
+      cta: "Conocer más"
     },
     {
-      title: langConfig.portfolio.items[2].title,
-      description: langConfig.portfolio.items[2].desc,
-      link: "#portfolio",
-      tags: langConfig.portfolio.items[2].tags,
+      title: "Estrategia TI 2026",
+      description: "Planes de arquitectura escalable, integración de datos y gobernanza para equipos IT de alto desempeño.",
+      link: "#experience",
+      tags: ["Estrategia", "Datos", "Ops"],
       highlighted: false,
+      cta: "Ver experiencia"
     }
   ];
 
@@ -66,14 +69,19 @@ export default function Portfolio() {
                   </div>
                 </div>
                 
-                <a 
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 font-medium transition-colors ${project.highlighted ? 'text-primary hover:text-primary/80' : 'text-white/80 hover:text-white'}`}
-                >
-                  {project.link !== '#' ? langConfig.portfolio.btnDemo : langConfig.portfolio.btnCode} <ExternalLink className="w-4 h-4" />
-                </a>
+                {(() => {
+                  const isAnchor = project.link.startsWith('#');
+                  return (
+                    <a 
+                      href={project.link}
+                      {...(!isAnchor ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      className={`inline-flex items-center gap-2 font-medium transition-colors ${project.highlighted ? 'text-primary hover:text-primary/80' : 'text-white/80 hover:text-white'}`}
+                    >
+                      {project.cta || (isAnchor ? langConfig.portfolio.btnCode : langConfig.portfolio.btnDemo)}
+                      {!isAnchor && <ExternalLink className="w-4 h-4" />}
+                    </a>
+                  );
+                })()}
               </div>
               
               {/* Decorative gradient orb for the highlighted card */}

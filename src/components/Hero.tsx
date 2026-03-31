@@ -34,8 +34,8 @@ export default function Hero() {
             <a href="#portfolio" className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
               {langConfig.hero.btnProjects}
             </a>
-            <a href="#contact" className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold text-lg hover:bg-white/5 transition-all">
-              {langConfig.hero.btnContact}
+            <a href="#about" className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold text-lg hover:bg-white/5 transition-all">
+              Conóceme
             </a>
           </div>
         </motion.div>
