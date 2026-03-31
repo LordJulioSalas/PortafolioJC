@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const { theme, setTheme } = useTheme();
-  const { langConfig, language, setLanguage } = useLanguage();
+  const { langConfig, language, setLanguage, t } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Navbar() {
           </a>
           <div className="w-full h-[1px] bg-gradient-to-r from-primary to-transparent mt-[2px] mb-[1px]"></div>
           <span className="text-[0.7rem] font-medium tracking-[0.25em] text-muted-foreground uppercase pl-1 leading-none pt-1">
-            developer
+            {t('nav.subtitle')}
           </span>
         </div>
         

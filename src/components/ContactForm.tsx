@@ -19,7 +19,7 @@ const formSchema = z.object({
 type ContactFormData = z.infer<typeof formSchema>;
 
 export default function ContactForm() {
-  const { langConfig } = useLanguage();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
@@ -78,10 +78,10 @@ export default function ContactForm() {
       <div className="container mx-auto px-4 md:px-6 max-w-3xl relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {langConfig.contact.title} <span className="text-primary">{langConfig.contact.titleHighlight}</span>
+            {t('contact.title')} <span className="text-primary">{t('contact.titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            {langConfig.contact.subtitle}
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -93,13 +93,13 @@ export default function ContactForm() {
               <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Send className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold mb-2">¡Mensaje Enviado!</h3>
-              <p className="text-muted-foreground">Gracias por contactarme. Me pondré en contacto contigo muy pronto.</p>
+              <h3 className="text-2xl font-bold mb-2">{t('contact.form.successTitle')}</h3>
+              <p className="text-muted-foreground">{t('contact.form.successText')}</p>
               <button 
                 onClick={() => setSubmitSuccess(false)}
                 className="mt-8 px-6 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
               >
-                Enviar otro mensaje
+                {t('contact.form.successButton')}
               </button>
             </div>
           ) : (
@@ -122,22 +122,22 @@ export default function ContactForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/80">{langConfig.contact.form.name}</label>
+                  <label className="text-sm font-medium text-foreground/80">{t('contact.form.name')}</label>
                   <input 
                     {...register('name')} 
                     className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
-                    placeholder="Tu nombre"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                   {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/80">{langConfig.contact.form.email}</label>
+                  <label className="text-sm font-medium text-foreground/80">{t('contact.form.email')}</label>
                   <input 
                     {...register('email')} 
                     type="email"
                     className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
-                    placeholder="tu@email.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                   {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
                 </div>
@@ -145,7 +145,7 @@ export default function ContactForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/80">Teléfono (Opcional)</label>
+                  <label className="text-sm font-medium text-foreground/80">{t('contact.form.phone')}</label>
                   <input 
                     {...register('phone')} 
                     className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all placeholder:text-muted-foreground"
@@ -154,39 +154,38 @@ export default function ContactForm() {
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/80">Tipo de Proyecto *</label>
+                  <label className="text-sm font-medium text-foreground/80">{t('contact.form.projectType')}</label>
                   <select 
                     {...register('type')} 
                     className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all appearance-none"
                   >
-                    <option value="" disabled>Selecciona una opción</option>
-                    <option value="Desarrollo de Sitio Web">Desarrollo de Sitio Web</option>
-                    <option value="E-commerce / Tienda Online">E-commerce / Tienda Online</option>
-                    <option value="Aplicación Web">Aplicación Web</option>
-                    <option value="Consultoría Técnica">Consultoría Técnica</option>
-                    <option value="Oportunidad Laboral">Oportunidad Laboral</option>
-                    <option value="Colaboración / Partnership">Colaboración / Partnership</option>
-                    <option value="Otro Asunto">Otro Asunto</option>
+                    <option value="" disabled>{t('contact.form.projectTypePlaceholder')}</option>
+                    <option value="web">{t('contact.form.optionWeb')}</option>
+                    <option value="ecommerce">{t('contact.form.optionEcommerce')}</option>
+                    <option value="app">{t('contact.form.optionApp')}</option>
+                    <option value="consulting">{t('contact.form.optionConsulting')}</option>
+                    <option value="opportunity">{t('contact.form.optionOpportunity')}</option>
+                    <option value="collaboration">{t('contact.form.optionCollaboration')}</option>
+                    <option value="other">{t('contact.form.optionOther')}</option>
                   </select>
                   {errors.type && <p className="text-red-400 text-xs">{errors.type.message}</p>}
                 </div>
               </div>
 
 
-
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/80">{langConfig.contact.form.message}</label>
+                <label className="text-sm font-medium text-foreground/80">{t('contact.form.requirement')}</label>
                 <textarea 
                   {...register('message')} 
                   rows={4}
                   className="w-full bg-card border border-input rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground transition-all resize-none placeholder:text-muted-foreground"
-                  placeholder="Cuéntame sobre tu idea o requerimientos..."
+                  placeholder={t('contact.form.requirementPlaceholder')}
                 ></textarea>
                 {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}
               </div>
               
               {submitError && (
-                <p className="text-red-400 text-sm text-center">Hubo un error al enviar el mensaje. Por favor intenta de nuevo.</p>
+                <p className="text-red-400 text-sm text-center">{t('contact.form.errorText')}</p>
               )}
 
               <button 
@@ -195,9 +194,9 @@ export default function ContactForm() {
                 className="w-full py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
-                  <><Loader2 className="w-5 h-5 animate-spin" /> {langConfig.contact.form.sending}</>
+                  <><Loader2 className="w-5 h-5 animate-spin" /> {t('contact.form.sending')}</>
                 ) : (
-                  <><Send className="w-5 h-5" /> {langConfig.contact.form.btnSend}</>
+                  <><Send className="w-5 h-5" /> {t('contact.form.btnSend')}</>
                 )}
               </button>
             </form>

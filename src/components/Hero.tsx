@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Hero() {
-  const { langConfig } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -16,22 +16,21 @@ export default function Hero() {
           className="max-w-4xl mx-auto"
         >
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
-            <span className="text-sm font-medium text-primary tracking-wide uppercase">{langConfig.hero.badge}</span>
+            <span className="text-sm font-medium text-primary tracking-wide uppercase">{t('hero.badge')}</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-            {langConfig.hero.titleLine1} <br className="hidden md:block"/>
+            {t('hero.titleLine1')} <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary neon-text">
-              {langConfig.hero.titleLine2}
+              {t('hero.titleLine2')}
             </span>
           </h1>
-          
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#portfolio" className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
-              {langConfig.hero.btnProjects}
+              {t('hero.btnProjects')}
             </a>
             <a href="#about" className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold text-lg hover:bg-white/5 transition-all">
-              Conóceme
+              {t('hero.btnContact')}
             </a>
           </div>
         </motion.div>

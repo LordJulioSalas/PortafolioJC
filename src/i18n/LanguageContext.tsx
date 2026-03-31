@@ -3,13 +3,31 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { translations, Language } from './translations';
 
+type TranslateFn = (key: string, fallback?: string) => string;
+
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   langConfig: typeof translations['es'];
+  t: TranslateFn;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+function translate(language: Language, key: string, fallback?: string): string {
+  const keys = key.split('.');
+  let value: unknown = translations[language];
+
+  for (const segment of keys) {
+    if (value && typeof value === 'object' && segment in (value as Record<string, unknown>)) {
+      value = (value as Record<string, unknown>)[segment];
+    } else {
+      return fallback ?? key;
+    }
+  }
+
+  return typeof value === 'string' ? value : fallback ?? key;
+}
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('es');
@@ -28,10 +46,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('portfolio-lang', lang);
   };
 
+  const t: TranslateFn = (key, fallback) => translate(language, key, fallback);
+
   // Ensure children always have access to the context
   // To avoid hydration mismatch visually, we still wait for mount to update from localStorage
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, langConfig: translations[language] }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage: handleSetLanguage, langConfig: translations[language], t }}
+    >
       <div style={{ visibility: mounted ? 'visible' : 'hidden' }}>
         {children}
       </div>

@@ -4,37 +4,37 @@ import { Check } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Pricing() {
-  const { language, langConfig } = useLanguage();
+  const { t, langConfig } = useLanguage();
   
   const services = [
     {
       name: langConfig.pricing.plans.web.name,
-      price: "A convenir",
-      time: "Acorde al alcance",
+      price: langConfig.pricing.noPrice,
+      time: langConfig.pricing.noTime,
       description: langConfig.pricing.plans.web.desc,
       features: langConfig.pricing.plans.web.features,
-      examples: "Ej: Presencia web corporativa, portafolio profesional",
+      examples: langConfig.pricing.plans.web.example,
       highlighted: false,
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.security.name,
-      price: "A convenir",
-      time: "Acorde al alcance",
+      price: langConfig.pricing.noPrice,
+      time: langConfig.pricing.noTime,
       description: langConfig.pricing.plans.security.desc,
       features: langConfig.pricing.plans.security.features,
-      examples: "Ej: sistemas internos, dashboards, integraciones seguras",
+      examples: langConfig.pricing.plans.security.example,
       highlighted: true,
-      badge: "Recomendado",
+      badge: langConfig.pricing.recommendedBadge,
       cta: langConfig.pricing.btnText
     },
     {
       name: langConfig.pricing.plans.data.name,
-      price: "A convenir",
-      time: "Acorde al alcance",
+      price: langConfig.pricing.noPrice,
+      time: langConfig.pricing.noTime,
       description: langConfig.pricing.plans.data.desc,
       features: langConfig.pricing.plans.data.features,
-      examples: "Ej: BI, análisis de datos, integraciones empresariales",
+      examples: langConfig.pricing.plans.data.example,
       highlighted: false,
       cta: langConfig.pricing.btnText
     }
@@ -68,7 +68,7 @@ export default function Pricing() {
               <div className="mb-4">
                 <span className="text-4xl font-extrabold">{pkg.price}</span>
               </div>
-              <p className="text-sm font-medium text-primary mb-4 p-2 bg-primary/10 rounded-lg inline-block">⏱ {language === 'en' ? 'Time:' : 'Tiempo:'} {pkg.time}</p>
+              <p className="text-sm font-medium text-primary mb-4 p-2 bg-primary/10 rounded-lg inline-block">⏱ {t('pricing.timeLabel')} {pkg.time}</p>
               <p className="text-muted-foreground text-sm mb-6 pb-6 border-b border-white/10">
                 {pkg.description}
               </p>

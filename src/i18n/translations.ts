@@ -6,21 +6,28 @@ export const translations = {
       howItWorks: "Cómo Funciona",
       pricing: "Servicios",
       portfolio: "Portafolio",
-      contact: "Contactar"
+      contact: "Contactar",
+      subtitle: "Desarrollador"
     },
     hero: {
       badge: "Ingeniero de Sistemas | Soporte TI | Ciberseguridad",
       titleLine1: "Soluciones tecnológicas",
       titleLine2: "seguras y escalables",
-      subtitle: "Hola, soy Julio Salas. Especialista en desarrollo de software, ciberseguridad, análisis de datos y soporte técnico corporativo.",
+      subtitle: "Hola, soy Julio Salas. especialista en desarrollo web, ciberseguridad y soporte corporativo.",
       btnProjects: "Ver proyectos",
-      btnContact: "Agendar consulta"
+      btnContact: "Conóceme"
     },
     about: {
       title: "Sobre",
       titleHighlight: "Mí",
-      p1: "Soy Julio Salas, Ingeniero de Sistemas graduado en 2026 por la UCO, con experiencia sólida en entornos corporativos internacionales.",
-      p2: "Me destaco como Asistente de Área IT en S&S Construction Engineering, brindando soporte técnico, garantizando la continuidad operativa y participando en el desarrollo de software, ciberseguridad y análisis de datos."
+      p1: "Soy Julio Salas, Ingeniero de Sistemas graduado en marzo de 2026 en la UCO con experiencia sólida en entornos corporativos internacionales.",
+      p2: "Me destaco como Asistente de Área IT en S&S Construction Engineering, brindando soporte técnico, garantizando la continuidad operativa y participando en el desarrollo de software, ciberseguridad y análisis de datos.",
+      p3: "Mi enfoque es conectar a empresas con soluciones TI escalables: no vendo productos, ofrezco colaboración estratégica.",
+      profile: {
+        name: "Julio Salas",
+        caption: "Ingeniero de Sistemas | Asistente de Área IT | Especialista en Ciberseguridad y Análisis de Datos",
+        button: "Explora experiencia"
+      }
     },
     experience: {
       title: "Mi",
@@ -65,25 +72,32 @@ export const translations = {
     pricing: {
       title: "Servicios &",
       titleHighlight: "Consultoría",
-      subtitle: "Soluciones personalizadas para empresas y proyectos técnicos. Precios a convenir según alcance.",
+      subtitle: "Soluciones personalizadas para empresas. Los costos se ajustan según el alcance del proyecto.",
+      timeLabel: "Tiempo:",
+      noPrice: "A convenir",
+      noTime: "Acorde al alcance",
+      recommendedBadge: "Recomendado",
+      btnText: "Contactar",
       plans: {
         web: {
           name: "Presencia Corporativa",
-          desc: "Desarrollo de sitio web corporativo orientado a visibilidad y reputación.",
-          features: ["Diseño profesional", "Ancla a tu identidad de marca", "Sección de contacto", "Optimización SEO básica", "Soporte inicial" ]
+          desc: "Presencia web corporativa con branding profesional y comunicación moderna.",
+          features: ["Diseño profesional", "Integración de marca", "Sección de contacto", "SEO básico", "Soporte inicial"],
+          example: "Ej: presencia web corporativa, portafolio B2B"
         },
         security: {
           name: "Sistemas Internos",
-          desc: "Implementación de paneles administrativos y flujos de datos seguros para equipos corporativos.",
-          features: ["Dashboards interactivos", "Integraciones API", "Control de roles y accesos", "Soporte dedicado", "Alta disponibilidad"]
+          desc: "Configuración de paneles internos seguros y sistemas administrativos para equipos corporativos.",
+          features: ["Dashboards interactivos", "Integraciones API", "Roles y permisos", "Soporte preferencial", "Alta disponibilidad"],
+          example: "Ej: sistemas internos seguros, autorizaciones y control de acceso"
         },
         data: {
           name: "Arquitectura de Datos",
-          desc: "Análisis y pipelines de datos para inteligencia empresarial y decisiones basadas en insights.",
-          features: ["Modelamiento de datos", "ETL/ELT", "Visualización avanzada", "Escalabilidad", "Monitoreo continuo"]
+          desc: "Canalizaciones de datos y analytics para inteligencia de negocio y toma de decisiones.",
+          features: ["Modelado de datos", "ETL/ELT", "Visualizaciones avanzadas", "Escalabilidad", "Monitoreo continuo"],
+          example: "Ej: BI empresarial, dashboards y alertas de indicadores clave"
         }
-      },
-      btnText: "Contactar" 
+      }
     },
     portfolio: {
       title: "Caso de",
@@ -142,10 +156,27 @@ export const translations = {
       subtitle: "¿Tienes un reto tecnológico? Escríbeme y lo solucionamos juntos.",
       form: {
         name: "Nombre Completo",
+        namePlaceholder: "Tu nombre",
         email: "Correo Corporativo",
-        message: "Describe tu requerimiento",
+        emailPlaceholder: "tu@email.com",
+        phone: "Teléfono (Opcional)",
+        projectType: "Tipo de Proyecto *",
+        projectTypePlaceholder: "Selecciona una opción",
+        requirement: "Describe tu requerimiento",
+        requirementPlaceholder: "Cuéntame sobre tu idea o requerimientos...",
+        optionWeb: "Desarrollo de Sitio Web",
+        optionEcommerce: "E-commerce / Tienda Online",
+        optionApp: "Aplicación Web",
+        optionConsulting: "Consultoría Técnica",
+        optionOpportunity: "Oportunidad Laboral",
+        optionCollaboration: "Colaboración / Partnership",
+        optionOther: "Otro Asunto",
         btnSend: "Enviar mensaje",
-        sending: "Enviando..."
+        sending: "Enviando...",
+        successTitle: "¡Mensaje Enviado!",
+        successText: "Gracias por contactarme. Me pondré en contacto contigo muy pronto.",
+        successButton: "Enviar otro mensaje",
+        errorText: "Hubo un error al enviar el mensaje. Por favor intenta de nuevo."
       }
     },
     footer: {
@@ -159,21 +190,28 @@ export const translations = {
       howItWorks: "How It Works",
       pricing: "Pricing",
       portfolio: "Portfolio",
-      contact: "Contact"
+      contact: "Contact",
+      subtitle: "Developer"
     },
     hero: {
       badge: "Systems Engineer | IT Support | Cybersecurity",
       titleLine1: "Secure and scalable",
       titleLine2: "tech solutions",
-      subtitle: "Hi, I'm Julio Salas. Specialist in software development, cybersecurity, data analysis, and corporate IT support.",
+      subtitle: "Hi, I’m Julio Salas. Specialist in web development, cybersecurity, and corporate IT support.",
       btnProjects: "View projects",
-      btnContact: "Book a consultation"
+      btnContact: "Know me"
     },
     about: {
       title: "About",
       titleHighlight: "Me",
-      p1: "I am Julio Salas, a Systems Engineer (graduating in March 2026 from UCO) with solid experience in international corporate environments.",
-      p2: "I currently work as an IT Area Assistant at S&S Construction Engineering, providing technical support, ensuring operational continuity, and engaging in software development, cybersecurity, and data analysis."
+      p1: "I am Julio Salas, a Systems Engineer graduated in March 2026 from UCO with solid experience in international corporate environments.",
+      p2: "I currently work as an IT Area Assistant at S&S Construction Engineering, providing technical support, ensuring operational continuity, and engaging in software development, cybersecurity, and data analysis.",
+      p3: "My focus is connecting companies with scalable IT solutions: I do not sell products, I offer strategic collaboration.",
+      profile: {
+        name: "Julio Salas",
+        caption: "Systems Engineer | IT Area Assistant | Cybersecurity and Data Analysis Specialist",
+        button: "Explore experience"
+      }
     },
     experience: {
       title: "My",
@@ -219,24 +257,31 @@ export const translations = {
       title: "Services &",
       titleHighlight: "Consulting",
       subtitle: "Personalized enterprise solutions. Costs are tailored to project scope.",
+      timeLabel: "Time:",
+      noPrice: "To be agreed",
+      noTime: "Based on scope",
+      recommendedBadge: "Recommended",
+      btnText: "Contact",
       plans: {
         web: {
           name: "Corporate Presence",
           desc: "Corporate web presence with professional branding and communication.",
-          features: ["Professional design", "Brand identity integration", "Contact section", "Basic SEO", "Initial support"]
+          features: ["Professional design", "Brand identity integration", "Contact section", "Basic SEO", "Initial support"],
+          example: "Ex: corporate website, B2B portfolio"
         },
         security: {
           name: "Internal Systems",
           desc: "Setup of secure admin panels and internal systems for corporate teams.",
-          features: ["Interactive dashboards", "API integrations", "Role-based access", "Dedicated support", "High availability"]
+          features: ["Interactive dashboards", "API integrations", "Role-based access", "Dedicated support", "High availability"],
+          example: "Ex: secure internal systems, access control"
         },
         data: {
           name: "Data Architecture",
           desc: "Data pipelines and analytics for business intelligence and informed decision-making.",
-          features: ["Data modeling", "ETL/ELT", "Advanced visualizations", "Scalability", "Continuous monitoring"]
+          features: ["Data modeling", "ETL/ELT", "Advanced visualizations", "Scalability", "Continuous monitoring"],
+          example: "Ex: enterprise BI, dashboards, KPI alerts"
         }
-      },
-      btnText: "Contact" 
+      }
     },
     portfolio: {
       title: "Success Stories",
@@ -295,10 +340,27 @@ export const translations = {
       subtitle: "Got a tech challenge? Reach out and we'll solve it together.",
       form: {
         name: "Full Name",
+        namePlaceholder: "Your name",
         email: "Corporate Email",
-        message: "Describe your requirements",
+        emailPlaceholder: "you@company.com",
+        phone: "Phone (Optional)",
+        projectType: "Project Type *",
+        projectTypePlaceholder: "Select an option",
+        requirement: "Describe your requirements",
+        requirementPlaceholder: "Tell me about your idea or requirements...",
+        optionWeb: "Website Development",
+        optionEcommerce: "E-commerce / Online Store",
+        optionApp: "Web Application",
+        optionConsulting: "Technical Consulting",
+        optionOpportunity: "Job Opportunity",
+        optionCollaboration: "Collaboration / Partnership",
+        optionOther: "Other Topic",
         btnSend: "Send Message",
-        sending: "Sending..."
+        sending: "Sending...",
+        successTitle: "Message Sent!",
+        successText: "Thanks for reaching out. I will get back to you shortly.",
+        successButton: "Send another message",
+        errorText: "There was an error sending your message. Please try again."
       }
     },
     footer: {

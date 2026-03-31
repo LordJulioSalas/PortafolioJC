@@ -24,7 +24,6 @@ const ContactSchema = z.object({
   email: z.string().email(),
   phone: z.string().optional(),
   type: z.string().min(1),
-  budget: z.string().min(1),
   message: z.string().min(10).max(1000),
 });
 
@@ -66,7 +65,6 @@ async function sendEmails(userData: {
   email: string;
   message: string;
   type: string;
-  budget: string;
 }) {
   try {
     console.log('Intentando enviar emails...');
@@ -90,7 +88,6 @@ async function sendEmails(userData: {
             <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb;">
               <h4 style="margin-top: 0;">Resumen de tu solicitud:</h4>
               <p><strong>Tipo de proyecto:</strong> ${userData.type}</p>
-              <p><strong>Presupuesto:</strong> ${userData.budget}</p>
               <p><strong>Tu mensaje:</strong><br><em>${userData.message}</em></p>
             </div>
             
@@ -116,7 +113,6 @@ async function sendEmails(userData: {
             <p><strong>Nombre:</strong> ${userData.name}</p>
             <p><strong>Email:</strong> ${userData.email}</p>
             <p><strong>Tipo de proyecto:</strong> ${userData.type}</p>
-            <p><strong>Presupuesto:</strong> ${userData.budget}</p>
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
             <p><strong>Mensaje:</strong></p>
             <p style="background: #f3f4f6; padding: 15px; border-radius: 5px; white-space: pre-wrap;">
@@ -178,7 +174,7 @@ console.log('Guardando en Supabase...');
         email: validated.email,
         phone: validated.phone || null,
         type: validated.type,
-        budget: validated.budget,
+
         message: validated.message,
         created_at: new Date().toISOString(),
       },
@@ -200,7 +196,6 @@ console.log('Guardando en Supabase...');
       email: validated.email,
       message: validated.message,
       type: validated.type,
-      budget: validated.budget,
     });
 
     if (!emailResult.success) {

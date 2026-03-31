@@ -17,11 +17,10 @@ export default function About() {
               {langConfig.about.title} <span className="text-primary">{langConfig.about.titleHighlight}</span>
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg">
-              <p>
-                {langConfig.about.p1}
-              </p>
-              <p>
-                {langConfig.about.p2}
+              <p>{langConfig.about.p1}</p>
+              <p>{langConfig.about.p2}</p>
+              <p className="text-primary font-semibold">
+                {langConfig.about.p3}
               </p>
             </div>
           </div>
@@ -38,9 +37,9 @@ export default function About() {
             />
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-              <h3 className="text-xl font-bold drop-shadow-lg">Julio Salas</h3>
-              <p className="text-sm drop-shadow">Ingeniero de Sistemas | Asistente de Área IT | Especialista en Ciberseguridad y Análisis de Datos</p>
-              <a href="#experience" className="inline-block mt-3 rounded-full px-4 py-2 bg-primary/90 text-white font-semibold hover:bg-primary">Explora experiencia</a>
+              <h3 className="text-xl font-bold drop-shadow-lg">{langConfig.about.profile.name}</h3>
+              <p className="text-sm drop-shadow">{langConfig.about.profile.caption}</p>
+              <a href="#experience" className="inline-block mt-3 rounded-full px-4 py-2 bg-primary/90 text-white font-semibold hover:bg-primary">{langConfig.about.profile.button}</a>
             </div>
           </div>
 
