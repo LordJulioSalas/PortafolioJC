@@ -26,10 +26,6 @@ export default function Hero() {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            {langConfig.hero.subtitle}
-          </p>
-
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#portfolio" className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
               {langConfig.hero.btnProjects}
