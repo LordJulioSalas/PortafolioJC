@@ -1,8 +1,12 @@
+'use client';
+
+import { useLenis } from '@/hooks/useLenis';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import HowItWorks from "@/components/HowItWorks";
+import Pricing from "@/components/Pricing";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import Technologies from "@/components/Technologies";
@@ -10,7 +14,9 @@ import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+function HomeContent() {
+  useLenis();
+
   return (
     <main className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white flex flex-col overflow-x-hidden">
       <Navbar />
@@ -18,6 +24,7 @@ export default function Home() {
       <About />
       <Experience />
       <HowItWorks />
+      <Pricing />
       <Portfolio />
       <Testimonials />
       <Technologies />
@@ -26,4 +33,8 @@ export default function Home() {
       <Footer />
     </main>
   );
+}
+
+export default function Home() {
+  return <HomeContent />;
 }

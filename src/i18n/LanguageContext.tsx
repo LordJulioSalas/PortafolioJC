@@ -54,7 +54,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     <LanguageContext.Provider
       value={{ language, setLanguage: handleSetLanguage, langConfig: translations[language], t }}
     >
-      <div style={{ visibility: mounted ? 'visible' : 'hidden' }}>
+      <div style={{ opacity: mounted ? 1 : 0, transition: 'opacity 0.15s ease' }}>
         {children}
       </div>
     </LanguageContext.Provider>

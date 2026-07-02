@@ -1,79 +1,139 @@
-"use client";
+'use client';
 
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { langConfig } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-white/10 pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <footer className="relative bg-gradient-to-b from-background to-primary/5 border-t border-primary/10 py-16 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-secondary/10 to-transparent rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
-          <div className="md:col-span-1">
-            <div className="inline-block mb-6">
-              <span translate="no" className="notranslate text-2xl font-bold neon-text tracking-tighter">
-                LORD<span className="text-primary">.</span>CODE
-              </span>
-              <div className="w-full h-[1px] bg-gradient-to-r from-primary to-transparent mt-[2px] mb-[1px]"></div>
-              <span translate="no" className="notranslate text-[0.7rem] font-medium tracking-[0.25em] text-muted-foreground uppercase pl-1 leading-none pt-1">
-                developer
-              </span>
+          {/* Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                LORD.CODE
+              </h3>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
+                {langConfig.footer.rights}
+              </p>
             </div>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
-              Desarrollo web full-stack profesional para negocios que buscan escalar rápido con bases sólidas y diseño futurista.
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              {langConfig.footer.description}
             </p>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-bold mb-6 text-white/90">{t('footer.navigation')}</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
-              <li><a href="#how-it-works" className="hover:text-primary transition-colors">{t('nav.howItWorks')}</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">{t('nav.pricing')}</a></li>
-              <li><a href="#portfolio" className="hover:text-primary transition-colors">{t('nav.portfolio')}</a></li>
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h4 className="font-bold text-lg mb-4 text-foreground">
+              {langConfig.footer.navigation}
+            </h4>
+            <ul className="space-y-2">
+              {[
+                { href: '#about', label: langConfig.nav.about },
+                { href: '#experience', label: langConfig.nav.experience },
+                { href: '#portfolio', label: langConfig.nav.portfolio },
+                { href: '#contact', label: langConfig.nav.contact },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-foreground/70 hover:text-primary transition-colors inline-block hover:translate-x-1 transition-transform"
+                  >
+                    → {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-bold mb-6 text-white/90">{t('footer.contact')}</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-primary" /> thejuliosalas@gmail.com</li>
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> +57 321 774 9666</li>
-              <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> Rionegro, Antioquia, CO</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-6 text-white/90">{t('footer.social')}</h4>
-            <div className="flex gap-4">
-              <a href="https://github.com/LordJulioSalas" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary/20 hover:text-primary transition-all border border-white/10 hover:border-primary/50">
-                <Github className="w-5 h-5" />
+          {/* Contact & Social */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h4 className="font-bold text-lg mb-4 text-foreground">
+              {langConfig.footer.contact}
+            </h4>
+            <div className="space-y-3 mb-6">
+              <a
+                href="mailto:thejuliosalas@gmail.com"
+                className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                thejuliosalas@gmail.com
               </a>
-              <a href="https://www.linkedin.com/in/julio-salas-711b27184" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary/20 hover:text-primary transition-all border border-white/10 hover:border-primary/50">
-                <Linkedin className="w-5 h-5" />
+              <a
+                href="tel:+573217749666"
+                className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                +57 321 774 9666
               </a>
             </div>
             
-            <div className="mt-6">
-              <p className="text-xs text-muted-foreground flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
-                Disponible para nuevos proyectos
-              </p>
+            <div className="flex gap-3">
+              <a
+                href="https://github.com/LordJulioSalas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 flex items-center justify-center hover:scale-110 hover:border-primary/40 transition-all"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/juliosalasr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 flex items-center justify-center hover:scale-110 hover:border-primary/40 transition-all"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="pt-8 border-t border-primary/10"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+            <p>© {currentYear} LORD.CODE. {langConfig.footer.copyright}</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-primary transition-colors">
+                {langConfig.footer.terms}
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                {langConfig.footer.privacy}
+              </a>
             </div>
           </div>
-
-        </div>
-
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} LORD.CODE - Julio Salas. {t('footer.rights')}</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
-            <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

@@ -168,27 +168,28 @@ if (body.website && body.website.trim() !== '') {
 console.log('Guardando en Supabase...');
 
     console.log('Guardando en Supabase...');
-    const { error: dbError } = await supabase.from('contact_messages').insert([
-      {
-        name: validated.name,
-        email: validated.email,
-        phone: validated.phone || null,
-        type: validated.type,
+    
+    // Solo intentar guardar en Supabase si está configurado
+    if (supabase) {
+      const { error: dbError } = await supabase.from('contact_messages').insert([
+        {
+          name: validated.name,
+          email: validated.email,
+          phone: validated.phone || null,
+          type: validated.type,
+          message: validated.message,
+          created_at: new Date().toISOString(),
+        },
+      ]);
 
-        message: validated.message,
-        created_at: new Date().toISOString(),
-      },
-    ]);
-
-    if (dbError) {
-      console.error('Error Supabase:', dbError);
-      return NextResponse.json(
-        { success: false, message: 'Error al guardar el mensaje en la base de datos.' },
-        { status: 500 }
-      );
+      if (dbError) {
+        console.error('Error Supabase:', dbError);
+      } else {
+        console.log('Mensaje guardado en Supabase');
+      }
+    } else {
+      console.warn('Supabase no configurado, saltando guardado en BD');
     }
-
-    console.log('Mensaje guardado en Supabase');
 
     console.log('Enviando emails...');
     const emailResult = await sendEmails({

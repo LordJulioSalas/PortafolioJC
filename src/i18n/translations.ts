@@ -11,9 +11,9 @@ export const translations = {
     },
     hero: {
       badge: "Ingeniero de Sistemas | Soporte TI | Ciberseguridad",
-      titleLine1: "Soluciones tecnológicas",
-      titleLine2: "seguras y escalables",
-      subtitle: "Hola, soy Julio Salas. especialista en desarrollo web, ciberseguridad y soporte corporativo.",
+      titleLine1: "Soluciones",
+      titleLine2: "Tecnológicas",
+      subtitle: "Hola, soy Julio Salas. Especialista en desarrollo web, ciberseguridad y soporte corporativo.",
       btnProjects: "Ver proyectos",
       btnContact: "Conóceme"
     },
@@ -184,6 +184,8 @@ export const translations = {
       contact: "Contacto",
       social: "Redes Sociales",
       rights: "Ingeniero de Sistemas.",
+      description: "Soluciones tecnológicas seguras y escalables para empresas.",
+      copyright: "Todos los derechos reservados.",
       terms: "Términos de Servicio",
       privacy: "Política de Privacidad"
     }
@@ -200,8 +202,8 @@ export const translations = {
     },
     hero: {
       badge: "Systems Engineer | IT Support | Cybersecurity",
-      titleLine1: "Secure and scalable",
-      titleLine2: "tech solutions",
+      titleLine1: "Scalable",
+      titleLine2: "Solutions",
       subtitle: "Hi, I’m Julio Salas. Specialist in web development, cybersecurity, and corporate IT support.",
       btnProjects: "View projects",
       btnContact: "Know me"
@@ -373,6 +375,8 @@ export const translations = {
       contact: "Contact",
       social: "Social Media",
       rights: "Systems Engineer.",
+      description: "Secure and scalable tech solutions for businesses.",
+      copyright: "All rights reserved.",
       terms: "Terms of Service",
       privacy: "Privacy Policy"
     }
