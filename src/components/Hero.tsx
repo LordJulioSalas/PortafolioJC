@@ -66,7 +66,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background dark:bg-black">
       {/* Matrix rain effect */}
       <div ref={matrixRef} className="absolute inset-0 overflow-hidden opacity-15" />
 
@@ -109,7 +109,7 @@ export default function Hero() {
           ref={titleRef}
           className="text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] font-black tracking-tighter leading-none mb-6"
         >
-          <div className="mb-2 text-white uppercase">
+          <div className="mb-2 text-foreground uppercase">
             {t('hero.titleLine1')}
           </div>
           <div className="relative inline-block text-primary uppercase" style={{
@@ -165,7 +165,7 @@ export default function Hero() {
           
           <a
             href="#about"
-            className="group px-10 py-5 rounded-lg border-2 border-primary bg-transparent font-black text-base uppercase tracking-wider hover:bg-primary hover:text-black transition-all"
+            className="group px-10 py-5 rounded-lg border-2 border-primary bg-transparent font-black text-base uppercase tracking-wider text-foreground hover:bg-primary hover:text-black transition-all"
           >
             <span className="flex items-center gap-2">
               {t('hero.btnContact')}
