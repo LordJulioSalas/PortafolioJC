@@ -19,7 +19,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 relative overflow-hidden bg-black/40">
+    <section id="about" ref={sectionRef} className="py-24 relative overflow-hidden bg-muted/30">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           

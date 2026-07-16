@@ -88,7 +88,7 @@ export default function Portfolio() {
                   </div>
                   {index === 0 && (
                     <a
-                      href="https://petcare.juliosalasv.dev"
+                      href="https://ss-distribution.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-primary/90 transition-all"

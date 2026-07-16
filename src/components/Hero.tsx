@@ -66,7 +66,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background dark:bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Matrix rain effect */}
       <div ref={matrixRef} className="absolute inset-0 overflow-hidden opacity-15" />
 
@@ -82,7 +82,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-block mb-10"
         >
-          <div className="bg-black/95 border-2 border-primary rounded-lg shadow-[0_0_30px_rgba(0,255,65,0.2)] overflow-hidden">
+          <div className="bg-card border-2 border-primary rounded-lg shadow-[0_0_30px_rgba(0,255,65,0.2)] overflow-hidden">
             {/* Terminal header */}
             <div className="flex items-center gap-2 px-4 py-2 bg-primary/5 border-b border-primary/30">
               <div className="flex gap-2">

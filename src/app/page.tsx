@@ -18,7 +18,7 @@ function HomeContent() {
   useLenis();
 
   return (
-    <main className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white flex flex-col overflow-x-hidden">
+    <main className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground flex flex-col overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

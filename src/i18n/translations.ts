@@ -107,9 +107,9 @@ export const translations = {
       btnCode: "Código",
       items: [
         { 
-          title: "PetCare System", 
-          desc: "Sistema de agendamiento de citas veterinarias con portal administrativo en tiempo real.",
-          tags: ["Node.js", "MongoDB", "React", "Next.js"]
+          title: "S&S Distribution", 
+          desc: "Plataforma corporativa B2B para distribución de soluciones químicas industriales en el Caribe, con catálogo de productos y soporte técnico.",
+          tags: ["Next.js", "React", "Vercel", "B2B"]
         },
         { 
           title: "¿Tu proyecto aquí?", 
@@ -298,9 +298,9 @@ export const translations = {
       btnCode: "Source Code",
       items: [
         { 
-          title: "PetCare System", 
-          desc: "Veterinary appointment scheduling system with a real-time administrative portal.",
-          tags: ["Node.js", "MongoDB", "React", "Next.js"]
+          title: "S&S Distribution", 
+          desc: "B2B corporate platform for industrial chemical solutions distribution in the Caribbean, with product catalog and technical support.",
+          tags: ["Next.js", "React", "Vercel", "B2B"]
         },
         { 
           title: "Your project here?", 
